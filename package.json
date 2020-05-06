@@ -1,0 +1,28 @@
+{
+  "name": "covid-api",
+  "version": "1.0.0",
+  "description": "APIs to track COVID-19 cases globally",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "axios": "^0.19.2",
+    "csv-parse": "^4.9.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xpowery/covid-api.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xpowery/covid-api/issues"
+  },
+  "homepage": "https://github.com/xpowery/covid-api#readme"
+}
