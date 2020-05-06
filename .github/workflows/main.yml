@@ -1,0 +1,40 @@
+name: Generate JSON from JHU CSV
+on:
+  push:
+    branches:
+      - master
+  schedule:
+    - cron: "15 */2 * * *"
+
+jobs:
+  extract_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          path: main
+      - name: Checkout data repo
+        uses: actions/checkout@v2
+        with:
+          repository: CSSEGISandData/COVID-19
+          path: data
+      - name: Install Dependencies
+        run: |
+          cd main
+          npm install
+      - name: generating JSON from CSV
+        uses: ./main/
+        id: extraction
+      - name: Commit files
+        run: |
+          cd main
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add .
+          git diff-index --quiet HEAD || git commit -m "Translate JHU CSV to json" -a
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.COVID_JHU_TOKEN }}
+          directory: main
