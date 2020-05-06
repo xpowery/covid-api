@@ -20,22 +20,26 @@ class JhuParser {
 
   async parseDir() {
     const fileNames = await fs.promises.readdir(this.rootDirectory);
-    const jsonOutputs = [];
+    const jsonOutputs = {};
 
     for (const fileName of fileNames) {
       const filePath = path.resolve(this.rootDirectory, fileName);
 
-      const csvParser = new CsvParser('FILE', filePath);
+      try {
+        const csvParser = new CsvParser('FILE', filePath);
 
-      await csvParser.process();
-      jsonOutputs.push(csvParser.processedData);
+        await csvParser.process();
+        jsonOutputs[csvParser.processedData.date] = csvParser.processedData.regionalData;
+      } catch (err) {
+        console.log(err);
+      }
     }
 
     this.jsonData = jsonOutputs;
   }
 
   async writeFile() {
-    if (!this.jsonData || !this.jsonData.length) {
+    if (!this.jsonData || !(Object.keys(this.jsonData).length)) {
       throw new Error('Unable to process');
     }
 

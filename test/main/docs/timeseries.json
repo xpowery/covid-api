@@ -1,1 +1,877 @@
-{"version":"0.1","description":"COVID-19 report from CSSEGISandData","data":[{"date":"2020-04-12","regionalData":{"Alabama":[3563,0,0],"Alaska":[272,0,0],"Arizona":[3542,0,0],"Arkansas":[1280,0,0],"California":[22795,0,0],"Colorado":[7307,0,0],"Connecticut":[12035,0,0],"Delaware":[1625,0,0],"Diamond Princess":[49,0,0],"District of Columbia":[1875,0,0],"Florida":[19895,0,0],"Georgia":[12452,0,0],"Grand Princess":[103,0,0],"Guam":[133,0,0],"Hawaii":[499,0,0],"Idaho":[1407,0,0],"Illinois":[20852,0,0],"Indiana":[7928,0,0],"Iowa":[1587,0,0],"Kansas":[1344,0,0],"Kentucky":[1963,0,0],"Louisiana":[20595,0,0],"Maine":[633,0,0],"Maryland":[8225,0,0],"Massachusetts":[25475,0,0],"Michigan":[24244,0,0],"Minnesota":[1621,0,0],"Mississippi":[2781,0,0],"Missouri":[4269,0,0],"Montana":[387,0,0],"Nebraska":[791,0,0],"Nevada":[2836,0,0],"New Hampshire":[929,0,0],"New Jersey":[61850,0,0],"New Mexico":[1245,0,0],"New York":[189033,0,0],"North Carolina":[4570,0,0],"North Dakota":[308,0,0],"Ohio":[6604,0,0],"Oklahoma":[1970,0,0],"Oregon":[1527,0,0],"Pennsylvania":[22938,0,0],"Puerto Rico":[897,0,0],"Rhode Island":[2665,0,0],"South Carolina":[3320,0,0],"South Dakota":[730,0,0],"Tennessee":[5508,0,0],"Texas":[13677,0,0],"Utah":[2303,0,0],"Vermont":[727,0,0],"Virginia":[5274,0,0],"Washington":[10609,0,0],"West Virginia":[593,0,0],"Wisconsin":[3341,0,0],"Wyoming":[270,0,0],"Northern Mariana Islands":[11,0,0]}},{"date":"2020-04-27","regionalData":{"Alabama":[6421,0,0],"Alaska":[340,0,0],"American Samoa":[0,0,0],"Arizona":[6534,0,0],"Arkansas":[3001,0,0],"California":[43558,0,0],"Colorado":[13441,0,0],"Connecticut":[25269,0,0],"Delaware":[4034,0,0],"Diamond Princess":[49,0,0],"District of Columbia":[3841,0,0],"Florida":[31532,0,0],"Georgia":[23486,0,0],"Grand Princess":[103,0,0],"Guam":[141,0,0],"Hawaii":[606,0,0],"Idaho":[1897,0,0],"Illinois":[43903,0,0],"Indiana":[15012,0,0],"Iowa":[5476,0,0],"Kansas":[3277,0,0],"Kentucky":[4085,0,0],"Louisiana":[26773,0,0],"Maine":[1015,0,0],"Maryland":[18581,0,0],"Massachusetts":[54938,0,0],"Michigan":[37778,0,0],"Minnesota":[3602,0,0],"Mississippi":[5911,0,0],"Missouri":[7120,0,0],"Montana":[448,0,0],"Nebraska":[3028,0,0],"Nevada":[4734,0,0],"New Hampshire":[1864,0,0],"New Jersey":[109038,0,0],"New Mexico":[2726,0,0],"New York":[288045,0,0],"North Carolina":[8997,0,0],"North Dakota":[867,0,0],"Northern Mariana Islands":[14,0,0],"Ohio":[15972,0,0],"Oklahoma":[3254,0,0],"Oregon":[2311,0,0],"Pennsylvania":[42616,0,0],"Puerto Rico":[1371,0,0],"Rhode Island":[7439,0,0],"South Carolina":[5498,0,0],"South Dakota":[2212,0,0],"Tennessee":[9667,0,0],"Texas":[24967,0,0],"Utah":[4123,0,0],"Vermont":[851,0,0],"Virgin Islands":[57,0,0],"Virginia":[12970,0,0],"Washington":[13521,0,0],"West Virginia":[1055,0,0],"Wisconsin":[5912,0,0],"Wyoming":[502,0,0],"Recovered":[0,0,0]}},{"date":"2020-05-06","regionalData":{"Alabama":[8437,0,0],"Alaska":[371,0,0],"American Samoa":[0,0,0],"Arizona":[9305,0,0],"Arkansas":[3525,0,0],"California":[58456,0,0],"Colorado":[17367,0,0],"Connecticut":[30621,0,0],"Delaware":[5371,0,0],"Diamond Princess":[49,0,0],"District of Columbia":[5322,0,0],"Florida":[37439,0,0],"Georgia":[29998,0,0],"Grand Princess":[103,0,0],"Guam":[145,0,0],"Hawaii":[625,0,0],"Idaho":[2127,0,0],"Illinois":[65889,0,0],"Indiana":[21033,0,0],"Iowa":[10111,0,0],"Kansas":[5648,0,0],"Kentucky":[5822,0,0],"Louisiana":[29996,0,0],"Maine":[1226,0,0],"Maryland":[27117,0,0],"Massachusetts":[70271,0,0],"Michigan":[44451,0,0],"Minnesota":[7851,0,0],"Mississippi":[8207,0,0],"Missouri":[9121,0,0],"Montana":[456,0,0],"Nebraska":[6373,0,0],"Nevada":[5660,0,0],"New Hampshire":[2636,0,0],"New Jersey":[130593,0,0],"New Mexico":[4138,0,0],"New York":[321192,0,0],"North Carolina":[12510,0,0],"North Dakota":[1266,0,0],"Northern Mariana Islands":[14,0,0],"Ohio":[20969,0,0],"Oklahoma":[4127,0,0],"Oregon":[2839,0,0],"Pennsylvania":[53864,0,0],"Puerto Rico":[1924,0,0],"Rhode Island":[9933,0,0],"South Carolina":[6841,0,0],"South Dakota":[2721,0,0],"Tennessee":[13690,0,0],"Texas":[33912,0,0],"Utah":[5449,0,0],"Vermont":[907,0,0],"Virgin Islands":[66,0,0],"Virginia":[20257,0,0],"Washington":[15594,0,0],"West Virginia":[1246,0,0],"Wisconsin":[8566,0,0],"Wyoming":[604,0,0]}}]}
+{
+  "version": "0.1",
+  "description": "COVID-19 report from CSSEGISandData",
+  "data": {
+    "2020-04-12": {
+      "Alabama": [
+        3563,
+        0,
+        93
+      ],
+      "Alaska": [
+        272,
+        66,
+        8
+      ],
+      "Arizona": [
+        3542,
+        0,
+        115
+      ],
+      "Arkansas": [
+        1280,
+        367,
+        27
+      ],
+      "California": [
+        22795,
+        0,
+        640
+      ],
+      "Colorado": [
+        7307,
+        0,
+        289
+      ],
+      "Connecticut": [
+        12035,
+        0,
+        554
+      ],
+      "Delaware": [
+        1625,
+        191,
+        35
+      ],
+      "Diamond Princess": [
+        49,
+        0,
+        0
+      ],
+      "District of Columbia": [
+        1875,
+        493,
+        50
+      ],
+      "Florida": [
+        19895,
+        0,
+        461
+      ],
+      "Georgia": [
+        12452,
+        0,
+        433
+      ],
+      "Grand Princess": [
+        103,
+        0,
+        0
+      ],
+      "Guam": [
+        133,
+        58,
+        5
+      ],
+      "Hawaii": [
+        499,
+        300,
+        9
+      ],
+      "Idaho": [
+        1407,
+        0,
+        27
+      ],
+      "Illinois": [
+        20852,
+        0,
+        720
+      ],
+      "Indiana": [
+        7928,
+        0,
+        343
+      ],
+      "Iowa": [
+        1587,
+        674,
+        41
+      ],
+      "Kansas": [
+        1344,
+        0,
+        56
+      ],
+      "Kentucky": [
+        1963,
+        464,
+        97
+      ],
+      "Louisiana": [
+        20595,
+        0,
+        840
+      ],
+      "Maine": [
+        633,
+        266,
+        19
+      ],
+      "Maryland": [
+        8225,
+        456,
+        236
+      ],
+      "Massachusetts": [
+        25475,
+        0,
+        756
+      ],
+      "Michigan": [
+        24244,
+        433,
+        1479
+      ],
+      "Minnesota": [
+        1621,
+        842,
+        70
+      ],
+      "Mississippi": [
+        2781,
+        0,
+        96
+      ],
+      "Missouri": [
+        4269,
+        0,
+        118
+      ],
+      "Montana": [
+        387,
+        169,
+        6
+      ],
+      "Nebraska": [
+        791,
+        0,
+        17
+      ],
+      "Nevada": [
+        2836,
+        0,
+        112
+      ],
+      "New Hampshire": [
+        929,
+        236,
+        23
+      ],
+      "New Jersey": [
+        61850,
+        0,
+        2350
+      ],
+      "New Mexico": [
+        1245,
+        235,
+        26
+      ],
+      "New York": [
+        189033,
+        23887,
+        9385
+      ],
+      "North Carolina": [
+        4570,
+        0,
+        89
+      ],
+      "North Dakota": [
+        308,
+        121,
+        7
+      ],
+      "Ohio": [
+        6604,
+        0,
+        253
+      ],
+      "Oklahoma": [
+        1970,
+        865,
+        96
+      ],
+      "Oregon": [
+        1527,
+        0,
+        52
+      ],
+      "Pennsylvania": [
+        22938,
+        0,
+        557
+      ],
+      "Puerto Rico": [
+        897,
+        0,
+        44
+      ],
+      "Rhode Island": [
+        2665,
+        35,
+        63
+      ],
+      "South Carolina": [
+        3320,
+        0,
+        82
+      ],
+      "South Dakota": [
+        730,
+        197,
+        6
+      ],
+      "Tennessee": [
+        5508,
+        1504,
+        106
+      ],
+      "Texas": [
+        13677,
+        2014,
+        283
+      ],
+      "Utah": [
+        2303,
+        0,
+        18
+      ],
+      "Vermont": [
+        727,
+        15,
+        27
+      ],
+      "Virginia": [
+        5274,
+        0,
+        141
+      ],
+      "Washington": [
+        10609,
+        0,
+        506
+      ],
+      "West Virginia": [
+        593,
+        83,
+        6
+      ],
+      "Wisconsin": [
+        3341,
+        0,
+        144
+      ],
+      "Wyoming": [
+        270,
+        137,
+        0
+      ],
+      "Northern Mariana Islands": [
+        11,
+        0,
+        2
+      ]
+    },
+    "2020-04-27": {
+      "Alabama": [
+        6421,
+        0,
+        219
+      ],
+      "Alaska": [
+        340,
+        217,
+        9
+      ],
+      "American Samoa": [
+        0,
+        0,
+        0
+      ],
+      "Arizona": [
+        6534,
+        1383,
+        275
+      ],
+      "Arkansas": [
+        3001,
+        985,
+        51
+      ],
+      "California": [
+        43558,
+        0,
+        1725
+      ],
+      "Colorado": [
+        13441,
+        2150,
+        688
+      ],
+      "Connecticut": [
+        25269,
+        0,
+        1924
+      ],
+      "Delaware": [
+        4034,
+        911,
+        120
+      ],
+      "Diamond Princess": [
+        49,
+        0,
+        0
+      ],
+      "District of Columbia": [
+        3841,
+        657,
+        178
+      ],
+      "Florida": [
+        31532,
+        0,
+        1075
+      ],
+      "Georgia": [
+        23486,
+        0,
+        916
+      ],
+      "Grand Princess": [
+        103,
+        0,
+        3
+      ],
+      "Guam": [
+        141,
+        128,
+        5
+      ],
+      "Hawaii": [
+        606,
+        482,
+        14
+      ],
+      "Idaho": [
+        1897,
+        938,
+        56
+      ],
+      "Illinois": [
+        43903,
+        0,
+        1933
+      ],
+      "Indiana": [
+        15012,
+        0,
+        813
+      ],
+      "Iowa": [
+        5476,
+        1900,
+        118
+      ],
+      "Kansas": [
+        3277,
+        0,
+        121
+      ],
+      "Kentucky": [
+        4085,
+        1501,
+        208
+      ],
+      "Louisiana": [
+        26773,
+        14927,
+        1729
+      ],
+      "Maine": [
+        1015,
+        532,
+        50
+      ],
+      "Maryland": [
+        18581,
+        1177,
+        910
+      ],
+      "Massachusetts": [
+        54938,
+        0,
+        2899
+      ],
+      "Michigan": [
+        37778,
+        8342,
+        3315
+      ],
+      "Minnesota": [
+        3602,
+        1774,
+        272
+      ],
+      "Mississippi": [
+        5911,
+        0,
+        227
+      ],
+      "Missouri": [
+        7120,
+        0,
+        283
+      ],
+      "Montana": [
+        448,
+        339,
+        14
+      ],
+      "Nebraska": [
+        3028,
+        0,
+        56
+      ],
+      "Nevada": [
+        4734,
+        0,
+        206
+      ],
+      "New Hampshire": [
+        1864,
+        777,
+        60
+      ],
+      "New Jersey": [
+        109038,
+        0,
+        5938
+      ],
+      "New Mexico": [
+        2726,
+        614,
+        99
+      ],
+      "New York": [
+        288045,
+        23887,
+        22269
+      ],
+      "North Carolina": [
+        8997,
+        0,
+        324
+      ],
+      "North Dakota": [
+        867,
+        326,
+        17
+      ],
+      "Northern Mariana Islands": [
+        14,
+        11,
+        2
+      ],
+      "Ohio": [
+        15972,
+        0,
+        728
+      ],
+      "Oklahoma": [
+        3254,
+        2139,
+        195
+      ],
+      "Oregon": [
+        2311,
+        0,
+        92
+      ],
+      "Pennsylvania": [
+        42616,
+        0,
+        1816
+      ],
+      "Puerto Rico": [
+        1371,
+        0,
+        84
+      ],
+      "Rhode Island": [
+        7439,
+        433,
+        226
+      ],
+      "South Carolina": [
+        5498,
+        3701,
+        174
+      ],
+      "South Dakota": [
+        2212,
+        1257,
+        11
+      ],
+      "Tennessee": [
+        9667,
+        4527,
+        181
+      ],
+      "Texas": [
+        24967,
+        10763,
+        651
+      ],
+      "Utah": [
+        4123,
+        1568,
+        41
+      ],
+      "Vermont": [
+        851,
+        0,
+        46
+      ],
+      "Virgin Islands": [
+        57,
+        51,
+        4
+      ],
+      "Virginia": [
+        12970,
+        1815,
+        449
+      ],
+      "Washington": [
+        13521,
+        0,
+        749
+      ],
+      "West Virginia": [
+        1055,
+        455,
+        34
+      ],
+      "Wisconsin": [
+        5912,
+        0,
+        272
+      ],
+      "Wyoming": [
+        502,
+        334,
+        7
+      ],
+      "Recovered": [
+        0,
+        106988,
+        0
+      ]
+    },
+    "2020-05-06": {
+      "Alabama": [
+        8437,
+        0,
+        315
+      ],
+      "Alaska": [
+        371,
+        277,
+        9
+      ],
+      "American Samoa": [
+        0,
+        0,
+        0
+      ],
+      "Arizona": [
+        9305,
+        1671,
+        395
+      ],
+      "Arkansas": [
+        3525,
+        2041,
+        83
+      ],
+      "California": [
+        58456,
+        0,
+        2381
+      ],
+      "Colorado": [
+        17367,
+        2743,
+        903
+      ],
+      "Connecticut": [
+        30621,
+        4346,
+        2633
+      ],
+      "Delaware": [
+        5371,
+        1847,
+        187
+      ],
+      "Diamond Princess": [
+        49,
+        0,
+        0
+      ],
+      "District of Columbia": [
+        5322,
+        667,
+        264
+      ],
+      "Florida": [
+        37439,
+        0,
+        1471
+      ],
+      "Georgia": [
+        29998,
+        0,
+        1299
+      ],
+      "Grand Princess": [
+        103,
+        0,
+        3
+      ],
+      "Guam": [
+        145,
+        124,
+        5
+      ],
+      "Hawaii": [
+        625,
+        548,
+        17
+      ],
+      "Idaho": [
+        2127,
+        1358,
+        65
+      ],
+      "Illinois": [
+        65889,
+        0,
+        2834
+      ],
+      "Indiana": [
+        21033,
+        0,
+        1211
+      ],
+      "Iowa": [
+        10111,
+        3572,
+        207
+      ],
+      "Kansas": [
+        5648,
+        296,
+        161
+      ],
+      "Kentucky": [
+        5822,
+        1892,
+        275
+      ],
+      "Louisiana": [
+        29996,
+        20316,
+        2115
+      ],
+      "Maine": [
+        1226,
+        741,
+        61
+      ],
+      "Maryland": [
+        27117,
+        1810,
+        1390
+      ],
+      "Massachusetts": [
+        70271,
+        0,
+        4212
+      ],
+      "Michigan": [
+        44451,
+        15659,
+        4183
+      ],
+      "Minnesota": [
+        7851,
+        4614,
+        455
+      ],
+      "Mississippi": [
+        8207,
+        4421,
+        342
+      ],
+      "Missouri": [
+        9121,
+        0,
+        409
+      ],
+      "Montana": [
+        456,
+        410,
+        16
+      ],
+      "Nebraska": [
+        6373,
+        0,
+        78
+      ],
+      "Nevada": [
+        5660,
+        200,
+        270
+      ],
+      "New Hampshire": [
+        2636,
+        1019,
+        92
+      ],
+      "New Jersey": [
+        130593,
+        15642,
+        8244
+      ],
+      "New Mexico": [
+        4138,
+        842,
+        162
+      ],
+      "New York": [
+        321192,
+        58950,
+        25124
+      ],
+      "North Carolina": [
+        12510,
+        0,
+        472
+      ],
+      "North Dakota": [
+        1266,
+        559,
+        25
+      ],
+      "Northern Mariana Islands": [
+        14,
+        12,
+        2
+      ],
+      "Ohio": [
+        20969,
+        0,
+        1135
+      ],
+      "Oklahoma": [
+        4127,
+        2830,
+        247
+      ],
+      "Oregon": [
+        2839,
+        860,
+        113
+      ],
+      "Pennsylvania": [
+        53864,
+        0,
+        3179
+      ],
+      "Puerto Rico": [
+        1924,
+        0,
+        99
+      ],
+      "Rhode Island": [
+        9933,
+        639,
+        355
+      ],
+      "South Carolina": [
+        6841,
+        3622,
+        296
+      ],
+      "South Dakota": [
+        2721,
+        1895,
+        24
+      ],
+      "Tennessee": [
+        13690,
+        6356,
+        226
+      ],
+      "Texas": [
+        33912,
+        16791,
+        925
+      ],
+      "Utah": [
+        5449,
+        2387,
+        56
+      ],
+      "Vermont": [
+        907,
+        0,
+        52
+      ],
+      "Virgin Islands": [
+        66,
+        51,
+        4
+      ],
+      "Virginia": [
+        20257,
+        2617,
+        713
+      ],
+      "Washington": [
+        15594,
+        0,
+        862
+      ],
+      "West Virginia": [
+        1246,
+        630,
+        48
+      ],
+      "Wisconsin": [
+        8566,
+        4131,
+        353
+      ],
+      "Wyoming": [
+        604,
+        405,
+        7
+      ]
+    }
+  }
+}

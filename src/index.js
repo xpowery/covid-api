@@ -19,8 +19,16 @@ const outputPath = path.join(
 );
 
 async function execute() {
-  const jhuParser = new JhuParser(dataRoot, outputPath);
-  await jhuParser.process();
+  console.time('PROCESS DONE IN: ');
+
+  try {
+    const jhuParser = new JhuParser(dataRoot, outputPath);
+    await jhuParser.process();
+  } catch (err) {
+    console.log(err);
+  }
+
+  console.timeEnd('PROCESS DONE IN: ');
 }
 
 execute();

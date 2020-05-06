@@ -74,8 +74,8 @@ class CsvParser {
         }
 
         const confirmed = record.Confirmed ? parseInt(record.Confirmed) : 0;
-        const recovered = record.recovered ? parseInt(record.recovered) : 0;
-        const deaths = record.deaths ? parseInt(record.deaths) : 0;
+        const recovered = record.Recovered ? parseInt(record.Recovered) : 0;
+        const deaths = record.Deaths ? parseInt(record.Deaths) : 0;
 
         this.jsonData[record.Province_State] = [confirmed, recovered, deaths];
       }
