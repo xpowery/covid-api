@@ -149,6 +149,11 @@ class CsvParser {
           return digit;
         });
 
+        /// Handling dates like `1/30/20 16:00	`
+        if (splittedDate[2].length == 2) {
+          splittedDate[2] = '20' + splittedDate[2];
+        }
+
         return splittedDate[2] + '-' + splittedDate[0] + '-' + splittedDate[1];
       }
 
