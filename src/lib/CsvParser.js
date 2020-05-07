@@ -5,10 +5,11 @@ const axios = require('axios');
 const parse = require('csv-parse/lib/sync');
 
 class CsvParser {
-  constructor(ipSrc, path, { skipFirstLine } = {}) {
+  constructor(ipSrc, path, reportFlag, { skipFirstLine } = {}) {
     this.canProcess = false;
     this.inputSource = ipSrc;
     this.csvPath = path;
+    this.reportFlag = reportFlag;
 
     this.csvData = null;
     this.jsonData = null;
@@ -39,7 +40,7 @@ class CsvParser {
     }
 
     if (this.inputSource === 'FILE') {
-      this.csvData = await fs.promises.readFile(this.csvPath, 'utf8');
+      this.csvData = await fs.promises.readFile(this.csvPath);
       return;
     }
 
@@ -63,25 +64,99 @@ class CsvParser {
 
     let date = '';
 
-    for (let i = 0; i < records.length; i++) {
-      const record = records[i];
+    if (this.reportFlag === 'US') {
+      for (let i = 0; i < records.length; i++) {
 
-      if (record && typeof record === 'object'
-        && record.Last_Update && record.Last_Update.length >= 10) {
+        const record = records[i];
 
-        if (!date) {
-          date = record.Last_Update.substr(0, 10);
+        if (record
+          && typeof record === 'object'
+          && record.Last_Update
+          && record.Last_Update.length >= 10) {
+
+          if (!date) {
+            date = this.formatDate(record.Last_Update);
+          }
+
+          this.jsonData[record.Province_State] = this.processStats(record);
         }
+      }
+    } else {
+      for (let i = 0; i < records.length; i++) {
 
-        const confirmed = record.Confirmed ? parseInt(record.Confirmed) : 0;
-        const recovered = record.Recovered ? parseInt(record.Recovered) : 0;
-        const deaths = record.Deaths ? parseInt(record.Deaths) : 0;
+        const record = records[i];
 
-        this.jsonData[record.Province_State] = [confirmed, recovered, deaths];
+        if (record && typeof record === 'object') {
+
+          record['Province_State'] = record['Province_State'] || record['Province/State'] || record['﻿Province/State'];
+          record['Country_Region'] = record['Country_Region'] || record['Country/Region'];
+          record['Last_Update'] = record['Last_Update'] || record['Last Update'];
+
+          if (record.Last_Update && record.Last_Update.length >= 10) {
+
+            if (!date) {
+              date = this.formatDate(record.Last_Update);
+            }
+
+            const country = record['Country_Region'];
+            const state = record['Province_State'] || 'ALL';
+
+            this.jsonData[country] = this.jsonData[country] || {};
+
+            const currentStats = this.processStats(record);
+
+            if (!this.jsonData[country][state]) {
+              this.jsonData[country][state] = currentStats;
+            } else {
+              const previousStats = this.jsonData[country][state];
+              this.jsonData[country][state] = this.concatenateStats(currentStats, previousStats);
+            }
+          }
+        }
       }
     }
 
     this.processFile(date);
+  }
+
+  processStats(record) {
+
+    const confirmed = record.Confirmed ? parseInt(record.Confirmed) : 0;
+    const recovered = record.Recovered ? parseInt(record.Recovered) : 0;
+    const deaths = record.Deaths ? parseInt(record.Deaths) : 0;
+
+    return [confirmed, recovered, deaths];
+  }
+
+  concatenateStats(current, previous) {
+    return [
+      current[0] + previous[0],
+      current[1] + previous[1],
+      current[2] + previous[2],
+    ]
+  }
+
+  formatDate(date) {
+    try {
+      if (date.indexOf('/') >= 0) {
+        date = date.split(' ')[0];
+
+        const splittedDate = date.split('/').map(digit => {
+          if (digit.length === 1) {
+            return '0' + digit;
+          }
+
+          return digit;
+        });
+
+        return splittedDate[2] + '-' + splittedDate[0] + '-' + splittedDate[1];
+      }
+
+      return date.substr(0, 10);
+    } catch (err) {
+      console.log(err);
+      return null;
+    }
   }
 
   processFile(date) {
