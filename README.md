@@ -7,7 +7,7 @@ Data regulary extracted from https://github.com/CSSEGISandData/COVID-19
 # API
 ## All countries
 
-GET: https://xpowery.github.io/covid-api/v1/timeseries-us.json
+GET: https://xpowery.github.io/covid-api/v1/timeseries.json
 
 ## Format
 
@@ -27,9 +27,7 @@ GET: https://xpowery.github.io/covid-api/v1/timeseries-us.json
           0,
           0,
           0
-        ],
-        // ...
-        // ..
+        ]
       }
     },
     "Japan": {
@@ -40,9 +38,7 @@ GET: https://xpowery.github.io/covid-api/v1/timeseries-us.json
           0
         ],
       }
-    },
-    // ...
-    // ..
+    }
   }
 }
 
@@ -107,9 +103,7 @@ GET: https://xpowery.github.io/covid-api/v1/timeseries-usa.json
         272,
         66,
         8
-      ],
-      // ...
-      // ..
+      ]
     }
   }
 }
