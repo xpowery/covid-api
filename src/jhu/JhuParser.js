@@ -74,7 +74,7 @@ class JhuParser {
 
       // const fileName =
       if (this.reportFlag === 'US') {
-        fileData.data = this.jsonData;
+        fileData.data = this.reprocessStructure(this.jsonData);
         const jsonDataString = JSON.stringify(fileData);
 
         await fs.promises.writeFile(path.resolve(this.outputDirectory, 'timeseries-usa.json'), jsonDataString);
@@ -86,6 +86,7 @@ class JhuParser {
         // this.jsonData[recentKey];
 
         const countryStats = {};
+        const countryStatsReprocessed = {};
 
         // for (let key in allCountryKeys) {
         //   countryStats[key] = {};
@@ -104,16 +105,22 @@ class JhuParser {
           }
         }
 
+
+        ///Reprocess
+        for (const country in countryStats) {
+          countryStatsReprocessed[country] = this.reprocessStructure(countryStats[country]);
+        }
+
         /// Writing all countries history
         await fs.promises.writeFile(path.resolve(this.outputDirectory, 'timeseries.json'), JSON.stringify({
           ...fileData,
-          data: countryStats,
+          data: countryStatsReprocessed,
         }));
 
-        for (let countryKey in countryStats) {
+        for (let countryKey in countryStatsReprocessed) {
           const countryData = {
             ...fileData,
-            data: countryStats[countryKey],
+            data: countryStatsReprocessed[countryKey],
           };
 
           const jsonDataString = JSON.stringify(countryData);
@@ -129,6 +136,21 @@ class JhuParser {
     } catch (err) {
       console.error(err);
     }
+  }
+
+  reprocessStructure(data) {
+    const stateSpecificData = {};
+
+    for (const date in data) {
+      const dateSpecificData = data[date];
+
+      for (const region in dateSpecificData) {
+        stateSpecificData[region] = stateSpecificData[region] || {};
+        stateSpecificData[region][date] = dateSpecificData[region];
+      }
+    }
+
+    return stateSpecificData;
   }
 }
 
