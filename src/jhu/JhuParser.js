@@ -95,9 +95,11 @@ class JhuParser {
           const dateSpecificData = this.jsonData[dateKey];
 
           for (let countryKey in dateSpecificData) {
-            countryStats[countryKey] = countryStats[countryKey] || {};
+            const countryCode = countryKey.toLowerCase().replace(/ /g, '-').replace(/\*/g, '');
 
-            let countrySpecificStat = countryStats[countryKey];
+            countryStats[countryCode] = countryStats[countryCode] || {};
+
+            let countrySpecificStat = countryStats[countryCode];
             countrySpecificStat[dateKey] = dateSpecificData[countryKey];
           }
         }
@@ -117,7 +119,7 @@ class JhuParser {
           const jsonDataString = JSON.stringify(countryData);
 
           try {
-            const countryCode = countryKey.toLowerCase().replace(/ /g, '-').replace(/\*/g, '');
+            const countryCode = countryKey;// .toLowerCase().replace(/ /g, '-').replace(/\*/g, '');
             await fs.promises.writeFile(path.resolve(this.outputDirectory, `timeseries-${countryCode}.json`), jsonDataString);
           } catch (err) {
             console.log(err);
