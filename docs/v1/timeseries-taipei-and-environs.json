@@ -1,1 +1,1 @@
-{"version":"0.1","description":"COVID-19 report from CSSEGISandData","data":{"2020-03-10":{"Taiwan":[47,17,1]}}}
+{"version":"0.1","description":"COVID-19 report from CSSEGISandData","data":{"Taiwan":{"2020-03-10":[47,17,1]}}}
