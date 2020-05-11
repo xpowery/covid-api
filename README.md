@@ -16,23 +16,23 @@ GET: https://xpowery.github.io/covid-api/v1/timeseries.json
   "version": "0.1",
   "description": "COVID-19 report from CSSEGISandData",
   "data": {
-    "Mainland China": {
+    "mainland-china": {
       "2020-04-12": {
-        "Anhui": [
+        "anhui": [
           0,
           0,
           0
         ],
-        "Beijing": [
+        "beijing": [
           0,
           0,
           0
         ]
       }
     },
-    "Japan": {
+    "japan": {
       "2020-04-12": {
-        "ALL": [
+        "all": [
           0,
           0,
           0
@@ -58,21 +58,21 @@ GET: https://xpowery.github.io/covid-api/v1/timeseries-india.json
   "description": "COVID-19 report from CSSEGISandData",
   "data": {
     "2020-02-08": {
-      "ALL": [
+      "all": [
         3,
         0,
         0
       ]
     },
     "2020-03-13": {
-      "ALL": [
+      "all": [
         82,
         4,
         2
       ]
     },
     "2020-05-07": {
-      "ALL": [
+      "all": [
         52987,
         15331,
         1785
@@ -83,7 +83,7 @@ GET: https://xpowery.github.io/covid-api/v1/timeseries-india.json
 
 ```
 
-## US Stats
+## US Stats[CLEAN DATA]
 GET: https://xpowery.github.io/covid-api/v1/timeseries-usa.json
 
 ## Format
@@ -94,12 +94,12 @@ GET: https://xpowery.github.io/covid-api/v1/timeseries-usa.json
   "description": "COVID-19 report from CSSEGISandData",
   "data": {
     "2020-04-12": {
-      "Alabama": [
+      "alabama": [
         3563,
         0,
         93
       ],
-      "Alaska": [
+      "alaska": [
         272,
         66,
         8
