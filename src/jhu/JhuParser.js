@@ -145,8 +145,10 @@ class JhuParser {
       const dateSpecificData = data[date];
 
       for (const region in dateSpecificData) {
-        stateSpecificData[region] = stateSpecificData[region] || {};
-        stateSpecificData[region][date] = dateSpecificData[region];
+        const regionCode = region.toLowerCase().replace(/ /g, '-').replace(/\*/g, '');
+
+        stateSpecificData[regionCode] = stateSpecificData[regionCode] || {};
+        stateSpecificData[regionCode][date] = dateSpecificData[region];
       }
     }
 

@@ -1,7 +1,7 @@
 const path = require('path');
 const JhuParser = require('../src/jhu/JhuParser');
 
-const processUsStats = false;
+const processUsStats = true;
 
 console.time('PROCESS DONE IN: ');
 
