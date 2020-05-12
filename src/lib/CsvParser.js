@@ -69,6 +69,12 @@ class CsvParser {
 
         const record = records[i];
 
+        /// Ignoring record with 'Recovered' state name
+        if (record.Province_State
+          && record.Province_State.toLowerCase() === 'recovered') {
+          continue;
+        }
+
         if (record
           && typeof record === 'object'
           && record.Last_Update
