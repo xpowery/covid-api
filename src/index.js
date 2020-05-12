@@ -6,6 +6,8 @@ const DATA_REPO = 'data';
 const MAIN_REPO = 'main';
 const CSV_ROOT_DIR_NAME = 'csse_covid_19_data';
 
+let usaData = null;
+
 const dataRoot = path.join(
   WORKSPACE,
   DATA_REPO,
@@ -24,6 +26,8 @@ async function executeUsFolder() {
   try {
     const jhuParser = new JhuParser(dataRoot, outputPath, "US");
     await jhuParser.process();
+
+    usaData = jhuParser.processedData;
   } catch (err) {
     console.log(err);
   }
@@ -36,6 +40,8 @@ async function executeCountriesFolder() {
 
   try {
     const jhuParser = new JhuParser(dataRoot, outputPath, "ALL");
+
+    jhuParser.usaData = usaData;
     await jhuParser.process();
   } catch (err) {
     console.log(err);

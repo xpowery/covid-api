@@ -12,6 +12,9 @@ class JhuParser {
     this.outputDirectory = outputDirectory;
     this.reportFlag = reportFlag;
 
+    this.usaData = null;
+    this.processedData = null;
+
     let csvFolder = 'csse_covid_19_daily_reports';
     if (this.reportFlag === 'US') {
       csvFolder = 'csse_covid_19_daily_reports_us';
@@ -74,23 +77,16 @@ class JhuParser {
 
       // const fileName =
       if (this.reportFlag === 'US') {
-        fileData.data = this.reprocessStructure(this.jsonData);
+
+        this.processedData = this.reprocessStructure(this.jsonData);
+
+        fileData.data = this.processedData;
         const jsonDataString = JSON.stringify(fileData);
 
-        await fs.promises.writeFile(path.resolve(this.outputDirectory, 'timeseries-usa.json'), jsonDataString);
+        await fs.promises.writeFile(path.resolve(this.outputDirectory, 'timeseries-usa-clean.json'), jsonDataString);
       } else {
-        const allKeys = Object.keys(this.jsonData);
-        const recentKey = allKeys[allKeys.length - 1];
-        const allCountryKeys = Object.keys(this.jsonData[recentKey]);
-
-        // this.jsonData[recentKey];
-
         const countryStats = {};
         const countryStatsReprocessed = {};
-
-        // for (let key in allCountryKeys) {
-        //   countryStats[key] = {};
-        // }
 
         for (let dateKey in this.jsonData) {
           const dateSpecificData = this.jsonData[dateKey];
@@ -105,11 +101,17 @@ class JhuParser {
           }
         }
 
-
         ///Reprocess
         for (const country in countryStats) {
           countryStatsReprocessed[country] = this.reprocessStructure(countryStats[country]);
         }
+
+        /// Fill clean data for USA
+        if (this.usaData) {
+          countryStatsReprocessed['us'] = this.usaData;
+        }
+
+        this.processedData = countryStatsReprocessed;
 
         /// Writing all countries history
         await fs.promises.writeFile(path.resolve(this.outputDirectory, 'timeseries.json'), JSON.stringify({
