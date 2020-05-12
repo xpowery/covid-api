@@ -83,7 +83,7 @@ class JhuParser {
         fileData.data = this.processedData;
         const jsonDataString = JSON.stringify(fileData);
 
-        await fs.promises.writeFile(path.resolve(this.outputDirectory, 'timeseries-usa-clean.json'), jsonDataString);
+        await fs.promises.writeFile(path.resolve(this.outputDirectory, 'timeseries-usa.json'), jsonDataString);
       } else {
         const countryStats = {};
         const countryStatsReprocessed = {};
