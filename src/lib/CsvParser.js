@@ -69,6 +69,18 @@ class CsvParser {
 
         const record = records[i];
 
+        if (!record) {
+          continue;
+        }
+
+        const isUsaRecord = record['Country_Region']
+          && (record['Country_Region'].toLowerCase() === 'us'
+            || record['Country_Region'].toLowerCase() === 'usa');
+
+        if (!isUsaRecord) {
+          continue;
+        }
+
         /// Ignoring record with 'Recovered' state name
         if (record.Province_State
           && record.Province_State.toLowerCase() === 'recovered') {
