@@ -1,7 +1,8 @@
 name: "COVID-19 stats - timeseries"
 description: "COVID-19 stats - timeseries, https://coronametrics.net/"
-icon: "activity"
-color: "purple"
+branding:
+  icon: "activity"
+  color: "purple"
 runs:
   using: "node12"
   main: "src/index.js"
